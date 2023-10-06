@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOTSTRAP -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <!-- FONT AWSOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Product Management</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="container">
+      <h1 class="text-center">QUẢN LÝ SẢN PHẨM</h1>
+      <div class="nav-button justify-content-around">
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#form_input"
+          id="open_form"
+        >
+          Thêm Sản Phẩm
+        </button>
+        <div></div>
+      </div>
+      <div></div>
+    </header>
+
+    <!-- BODY -->
+    <section id="product_center">
+      <div id="product_table" class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Số TT</th>
+              <th scope="col">Tên Sản phẩm</th>
+              <th scope="col">Số lượng tồn</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Sale</th>
+              <th scope="col">Chức năng</th>
+            </tr>
+          </thead>
+          <tbody data-haha="1" id="tbody_product"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal fade" id="form_input" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="title_form">
+              Thông tin sản phẩm
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="input_name" class="form-label">Tên sản phẩm</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input_name"
+                placeholder="Ex: SSD"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="input_amount" class="form-label">Số lượng</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input_amount"
+                placeholder="Ex: 50"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="input_price" class="form-label">Giá bán</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input_price"
+                placeholder="Ex: 100"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="input_sale" class="form-label">Sale</label>
+              <input
+                type="text"
+                class="form-control"
+                id="input_sale"
+                placeholder="Ex: 0,2"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="close_form"
+            >
+              Đóng
+            </button>
+            <button type="button" class="btn btn-primary" id="create_product">
+              Lưu thông tin
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-primary"
+              id="update_product"
+            >
+              Cập nhật thông tin
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOFICATION -->
+    <div id="nofi">
+      <div class="alert alert-primary d-flex align-items-center" role="alert">
+        <div id="nofi_text">An example alert with an icon</div>
+      </div>
+    </div>
+
+
+    <!-- Modal Delete -->
+    <div
+      class="modal fade"
+      id="delete_form"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Xóa Sản Phẩm</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Xóa toàn bộ dữ liệu: <span id="product_delete"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="close_delete_form"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              HỦY
+            </button>
+            <button id="button_delete" type="button" class="btn btn-danger">XÓA</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOTSTAP -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Axios -->
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+
+    <!-- Main JS -->
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

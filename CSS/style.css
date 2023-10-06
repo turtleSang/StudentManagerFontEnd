@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#nofi{
+    position: absolute;
+    top: 0;
+    left: 22%;
+    width: 50%;
+    z-index: 9999;
+    display: none;
+    animation-name: show;
+    animation-timing-function: ease;
+    animation-duration: 2.5s;
+}
+#update_product{
+    display: none;
+}
+@keyframes show{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
